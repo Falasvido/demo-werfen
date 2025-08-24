@@ -1,0 +1,66 @@
+<div class="title-bar">
+    <h2 i18n>Create User</h2>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="save()" novalidate>
+
+    <div class="column">
+        <mat-form-field appearance="fill">
+            <mat-label i18n>Username</mat-label>
+            <input matInput type="text" formControlName="username" />
+            @if (form.get('username')?.hasError('required')) {
+                <mat-error i18n>Username is required</mat-error>
+            }
+            @if (form.get('username')?.hasError('minlength') || form.get('username')?.hasError('maxlength')) {
+                <mat-error i18n>Username needs between 5 and 15 characters</mat-error>
+            }
+            @if (form.get('username')?.hasError('usernameTaken')) {
+                <mat-error i18n>Username is already taken</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label i18n>Date Expiration</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateExpiration" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="column">
+        <mat-form-field appearance="fill">
+            <mat-label i18n>Password</mat-label>
+            <input matInput type="password" formControlName="password" />
+            @if (form.get('password')?.invalid && form.get('password')?.touched) {
+                <mat-error i18n>
+                    Password is required
+                </mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label i18n>Confirm Password</mat-label>
+            <input matInput type="password" formControlName="confirmPassword" />
+            @if (form.get('confirmPassword')?.hasError('passwordMismatch') && form.get('confirmPassword')?.touched) {
+                <mat-error i18n>
+                    Passwords do not match
+                </mat-error>
+            }
+        </mat-form-field>
+
+        <mat-checkbox formControlName="enabled" i18n>Enabled</mat-checkbox>
+        
+        <div class="action-container">
+            <button id="cancel-button" mat-stroked-button color="warn" type="button" (click)="navigateToGrid()" i18n>CANCEL</button>
+            @if (loading) {
+                <div class="spinner-container">
+                    <mat-spinner id="spinner" diameter="20"></mat-spinner>
+                </div>
+            }
+            @else {
+                <button mat-stroked-button color="primary" type="submit" [disabled]="!form.valid" i18n>SAVE</button>
+            }
+        </div>
+    </div>
+
+</form>

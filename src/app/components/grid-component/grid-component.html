@@ -1,0 +1,43 @@
+@let users = users$ | async;
+
+<div class="title-bar">
+    <h2 i18n>Angular Demo</h2>
+    <button id="create-user-button" matButton="outlined" color="primary" (click)="navigateToCreateUserForm()" i18n>CREATE USER</button>
+</div>
+
+<div class="grid-container">
+    @if (users) {
+        <table mat-table [dataSource]="users">
+
+            <ng-container matColumnDef="username">
+                <th mat-header-cell *matHeaderCellDef i18n>Username</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.username }}
+                </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="dateExpiration">
+                <th mat-header-cell *matHeaderCellDef i18n>Date of Expiration</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.dateExpiration | date:'shortDate' }}
+                </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="enabled">
+                <th mat-header-cell *matHeaderCellDef i18n>Enabled</th>
+                <td mat-cell *matCellDef="let user">
+                    <mat-checkbox [checked]="user.enabled" disabled></mat-checkbox>
+                </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr id="user-row" mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disabled-row': !row.enabled}"></tr>
+        </table>
+    }
+    @else {
+        <div class="spinner-container">
+            <mat-spinner id="spinner" diameter="50"></mat-spinner>
+        </div>
+    }
+</div>
+

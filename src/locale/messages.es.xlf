@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5891941941917080206" datatype="html">
+        <source>Create User</source>
+        <target>Crear usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5248717555542428023" datatype="html">
+        <source>Username</source>
+        <target>Nombre de usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3702338872876040900" datatype="html">
+        <source>Username is required</source>
+        <target>El nombre de usuario es obligatorio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7420883611786800749" datatype="html">
+        <source>Username needs between 5 and 15 characters</source>
+        <target>El nombre de usuario debe tener entre 5 y 15 caracteres</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6270445727939289806" datatype="html">
+        <source>Username is already taken</source>
+        <target>El nombre de usuario no esta disponible</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3924631347680816618" datatype="html">
+        <source>Date Expiration</source>
+        <target>Fecha de caducidad</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1431416938026210429" datatype="html">
+        <source>Password</source>
+        <target>Contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9132547751630599796" datatype="html">
+        <source> Password is required </source>
+        <target> La contraseña es obligatoria </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3241357959735682038" datatype="html">
+        <source>Confirm Password</source>
+        <target>Confirmar contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4314910104023472121" datatype="html">
+        <source> Passwords do not match </source>
+        <target> Las contraseñas no coinciden </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4816216590591222133" datatype="html">
+        <source>Enabled</source>
+        <target>Activado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6943486270557756671" datatype="html">
+        <source>CANCEL</source>
+        <target>CANCELAR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6671956963490165282" datatype="html">
+        <source>SAVE</source>
+        <target>GUARDAR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-user-component/create-user-component.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5708631243658363833" datatype="html">
+        <source>Angular Demo</source>
+        <target>Angular Demo (en español)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/grid-component/grid-component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7759700990772271176" datatype="html">
+        <source>CREATE USER</source>
+        <target>CREAR USUARIO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/grid-component/grid-component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5381513611853730068" datatype="html">
+        <source> Username </source>
+        <target> Nombre de usuario </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/grid-component/grid-component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8421885091278046133" datatype="html">
+        <source> Date of Expiration </source>
+        <target> Fecha de caducidad </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/grid-component/grid-component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6151416851572883297" datatype="html">
+        <source> Enabled </source>
+        <target> Activado </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/grid-component/grid-component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

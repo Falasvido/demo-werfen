@@ -1,0 +1,953 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>demo-project documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">demo-project documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CreateUserComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/create-user-component/create-user-component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>CreateUserComponent provides a form to create a new user in the system.</p>
+<p>It includes form validation, custom validators for password matching and username availability, and handles submission to the UserService.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-create-user-component</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>MatFormFieldModule</code>
+                            <code>MatInputModule</code>
+                            <code>MatButtonModule</code>
+                            <code>MatCheckboxModule</code>
+                            <code>MatDatepickerModule</code>
+                            <code>MatNativeDateModule</code>
+                            <code>MatProgressSpinnerModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./create-user-component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./create-user-component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#formBuilder" >formBuilder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#userService" >userService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initializeForm" >initializeForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#navigateToGrid" >navigateToGrid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#save" >save</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initializeForm"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>initializeForm</b></span>
+                        <a href="#initializeForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initializeForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the reactive form with controls, validators, and async validators.</p>
+<ul>
+<li><code>username</code> requires 5-15 characters and must be unique.</li>
+<li><code>password</code> and <code>confirmPassword</code> must match.</li>
+<li><code>username</code>, <code>password</code> and <code>confirmPassword</code> must be specified.</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateToGrid"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>navigateToGrid</b></span>
+                        <a href="#navigateToGrid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>navigateToGrid()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates back to the main grid view after successful user creation or canceling the operation through UI button.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular lifecycle hook that initializes the user creation form.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="save"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>save</b></span>
+                        <a href="#save"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>save()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Submits the form to create a new user.
+Handles form loading state and calls the UserService to save the user.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Reactive form group for user creation</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formBuilder"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>formBuilder</b></span>
+                        <a href="#formBuilder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormBuilder</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Angular FormBuilder to create reactive forms</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indicates whether the form submission is in progress</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Angular Router instance for navigation</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>userService</b></span>
+                        <a href="#userService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/create-user-component/create-user-component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>UserService instance to interact with user data</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { User } from &#x27;../../models/user&#x27;;
+import { UserService } from &#x27;../../services/user-service&#x27;;
+import { passwordMatchValidator } from &#x27;../../validators/match-password-validator&#x27;;
+import { take } from &#x27;rxjs&#x27;;
+import { MatFormFieldModule } from &#x27;@angular/material/form-field&#x27;;
+import { MatInputModule } from &#x27;@angular/material/input&#x27;;
+import { MatCheckboxModule } from &#x27;@angular/material/checkbox&#x27;;
+import { MatDatepickerModule } from &#x27;@angular/material/datepicker&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
+import { MatNativeDateModule } from &#x27;@angular/material/core&#x27;;
+import { MatProgressSpinnerModule } from &#x27;@angular/material/progress-spinner&#x27;;
+import { usernameExistsValidator } from &#x27;../../validators/username-exists-validator&#x27;;
+
+
+/**
+ * CreateUserComponent provides a form to create a new user in the system.
+ *
+ * It includes form validation, custom validators for password matching and username availability, and handles submission to the UserService.
+ */
+@Component({
+	selector: &#x27;app-create-user-component&#x27;,
+	imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatProgressSpinnerModule],
+	templateUrl: &#x27;./create-user-component.html&#x27;,
+	styleUrl: &#x27;./create-user-component.scss&#x27;
+})
+export class CreateUserComponent implements OnInit {
+
+	/** Angular Router instance for navigation */
+	private readonly router: Router;
+	/** Angular FormBuilder to create reactive forms */
+	private readonly formBuilder: FormBuilder;
+	/** UserService instance to interact with user data */
+	private readonly userService: UserService;
+
+	/** Reactive form group for user creation */
+	public form!: FormGroup;
+
+	/** Indicates whether the form submission is in progress */
+	public loading: boolean &#x3D; false;
+
+	constructor() {
+		this.router &#x3D; inject(Router);
+		this.formBuilder &#x3D; inject(FormBuilder);
+		this.userService &#x3D; inject(UserService);
+	}
+
+	/**
+   * Angular lifecycle hook that initializes the user creation form.
+   */
+	public ngOnInit(): void {
+		this.initializeForm();
+	}
+
+	/**
+   * Initializes the reactive form with controls, validators, and async validators.
+   * - &#x60;username&#x60; requires 5-15 characters and must be unique.
+   * - &#x60;password&#x60; and &#x60;confirmPassword&#x60; must match.
+   * - &#x60;username&#x60;, &#x60;password&#x60; and &#x60;confirmPassword&#x60; must be specified.
+   */
+	private initializeForm(): void {
+		this.form &#x3D; this.formBuilder.group({
+			username: [&#x27;&#x27;, [Validators.required, Validators.minLength(5), Validators.maxLength(15)], [usernameExistsValidator(this.userService)]],
+			password: [&#x27;&#x27;, Validators.required],
+			confirmPassword: [&#x27;&#x27;, Validators.required],
+			enabled: [false],
+			dateExpiration: [new Date()]
+		},
+			{ validators: passwordMatchValidator(&#x27;password&#x27;, &#x27;confirmPassword&#x27;) }
+		);
+	}
+
+	/**
+   * Navigates back to the main grid view after successful user creation or canceling the operation through UI button.
+   */
+	public navigateToGrid(): void {
+		this.router.navigate([&#x27;/main&#x27;]);
+	}
+
+	/**
+   * Submits the form to create a new user.
+   * Handles form loading state and calls the UserService to save the user.
+   */
+	public save(): void {
+		this.loading &#x3D; true;
+		const user &#x3D; new User({ ...this.form.value });
+
+		this.userService.save(user).pipe(take(1)).subscribe({
+			next: _ &#x3D;&gt; {
+				this.navigateToGrid();
+			},
+			error: (error) &#x3D;&gt; {
+				console.log(error);
+			},
+			complete: () &#x3D;&gt; {
+				this.loading &#x3D; false;
+			}
+		});
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;title-bar&quot;&gt;
+    &lt;h2 i18n&gt;Create User&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;save()&quot; novalidate&gt;
+
+    &lt;div class&#x3D;&quot;column&quot;&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label i18n&gt;Username&lt;/mat-label&gt;
+            &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;username&quot; /&gt;
+            @if (form.get(&#x27;username&#x27;)?.hasError(&#x27;required&#x27;)) {
+                &lt;mat-error i18n&gt;Username is required&lt;/mat-error&gt;
+            }
+            @if (form.get(&#x27;username&#x27;)?.hasError(&#x27;minlength&#x27;) || form.get(&#x27;username&#x27;)?.hasError(&#x27;maxlength&#x27;)) {
+                &lt;mat-error i18n&gt;Username needs between 5 and 15 characters&lt;/mat-error&gt;
+            }
+            @if (form.get(&#x27;username&#x27;)?.hasError(&#x27;usernameTaken&#x27;)) {
+                &lt;mat-error i18n&gt;Username is already taken&lt;/mat-error&gt;
+            }
+        &lt;/mat-form-field&gt;
+
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label i18n&gt;Date Expiration&lt;/mat-label&gt;
+            &lt;input matInput [matDatepicker]&#x3D;&quot;picker&quot; formControlName&#x3D;&quot;dateExpiration&quot; /&gt;
+            &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+            &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;column&quot;&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label i18n&gt;Password&lt;/mat-label&gt;
+            &lt;input matInput type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;password&quot; /&gt;
+            @if (form.get(&#x27;password&#x27;)?.invalid &amp;&amp; form.get(&#x27;password&#x27;)?.touched) {
+                &lt;mat-error i18n&gt;
+                    Password is required
+                &lt;/mat-error&gt;
+            }
+        &lt;/mat-form-field&gt;
+
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label i18n&gt;Confirm Password&lt;/mat-label&gt;
+            &lt;input matInput type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;confirmPassword&quot; /&gt;
+            @if (form.get(&#x27;confirmPassword&#x27;)?.hasError(&#x27;passwordMismatch&#x27;) &amp;&amp; form.get(&#x27;confirmPassword&#x27;)?.touched) {
+                &lt;mat-error i18n&gt;
+                    Passwords do not match
+                &lt;/mat-error&gt;
+            }
+        &lt;/mat-form-field&gt;
+
+        &lt;mat-checkbox formControlName&#x3D;&quot;enabled&quot; i18n&gt;Enabled&lt;/mat-checkbox&gt;
+        
+        &lt;div class&#x3D;&quot;action-container&quot;&gt;
+            &lt;button id&#x3D;&quot;cancel-button&quot; mat-stroked-button color&#x3D;&quot;warn&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;navigateToGrid()&quot; i18n&gt;CANCEL&lt;/button&gt;
+            @if (loading) {
+                &lt;div class&#x3D;&quot;spinner-container&quot;&gt;
+                    &lt;mat-spinner id&#x3D;&quot;spinner&quot; diameter&#x3D;&quot;20&quot;&gt;&lt;/mat-spinner&gt;
+                &lt;/div&gt;
+            }
+            @else {
+                &lt;button mat-stroked-button color&#x3D;&quot;primary&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;!form.valid&quot; i18n&gt;SAVE&lt;/button&gt;
+            }
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/form&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="title-bar">    <h2 i18n>Create User</h2></div><form [formGroup]="form" (ngSubmit)="save()" novalidate>    <div class="column">        <mat-form-field appearance="fill">            <mat-label i18n>Username</mat-label>            <input matInput type="text" formControlName="username" />            @if (form.get(\'username\')?.hasError(\'required\')) {                <mat-error i18n>Username is required</mat-error>            }            @if (form.get(\'username\')?.hasError(\'minlength\') || form.get(\'username\')?.hasError(\'maxlength\')) {                <mat-error i18n>Username needs between 5 and 15 characters</mat-error>            }            @if (form.get(\'username\')?.hasError(\'usernameTaken\')) {                <mat-error i18n>Username is already taken</mat-error>            }        </mat-form-field>        <mat-form-field appearance="fill">            <mat-label i18n>Date Expiration</mat-label>            <input matInput [matDatepicker]="picker" formControlName="dateExpiration" />            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>            <mat-datepicker #picker></mat-datepicker>        </mat-form-field>    </div>    <div class="column">        <mat-form-field appearance="fill">            <mat-label i18n>Password</mat-label>            <input matInput type="password" formControlName="password" />            @if (form.get(\'password\')?.invalid && form.get(\'password\')?.touched) {                <mat-error i18n>                    Password is required                </mat-error>            }        </mat-form-field>        <mat-form-field appearance="fill">            <mat-label i18n>Confirm Password</mat-label>            <input matInput type="password" formControlName="confirmPassword" />            @if (form.get(\'confirmPassword\')?.hasError(\'passwordMismatch\') && form.get(\'confirmPassword\')?.touched) {                <mat-error i18n>                    Passwords do not match                </mat-error>            }        </mat-form-field>        <mat-checkbox formControlName="enabled" i18n>Enabled</mat-checkbox>                <div class="action-container">            <button id="cancel-button" mat-stroked-button color="warn" type="button" (click)="navigateToGrid()" i18n>CANCEL</button>            @if (loading) {                <div class="spinner-container">                    <mat-spinner id="spinner" diameter="20"></mat-spinner>                </div>            }            @else {                <button mat-stroked-button color="primary" type="submit" [disabled]="!form.valid" i18n>SAVE</button>            }        </div>    </div></form></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'CreateUserComponent', 'selector': 'app-create-user-component'},{'name': 'GridComponent', 'selector': 'app-grid-component'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CreateUserComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateUserComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
