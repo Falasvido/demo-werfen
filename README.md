@@ -1,6 +1,12 @@
 # DemoProject
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+Simple grid/form application that let's the user visualize and create new Users. Some of the included features are:
+- Angular material templates
+- Faking latency using observables and delay (between 1500 and 2000 ms)
+- Sync (match-passwords-validator) and async (username-exists-validator) validators in the create-user form
+- Unit testing for all components, service and validators
+- i18n localization (english - spanish)
+- Documentation in Compodoc
 
 ## Development server
 
@@ -10,31 +16,13 @@ To start a local development server, run:
 ng serve
 ```
 
+Or, for a spanish version of the app, run:
+```bash
+ng serve --configuration=es
+```
+
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
 ## Running unit tests
 
@@ -44,16 +32,15 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
+## Documentation
 
-For end-to-end (e2e) testing, run:
+To generate and view documentation (Compodoc) run the following commands:
 
 ```bash
-ng e2e
+npx compodoc -p tsconfig.json -d documentation
+```
+```bash
+npx compodoc -s -d documentation
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Once the server is running, open your browser and navigate to `http://localhost:8080/`.
